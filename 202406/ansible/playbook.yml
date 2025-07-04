@@ -1,0 +1,5 @@
+- name: Aplicar role punto_d
+  hosts: localhost
+  become: true
+  roles:
+    - punto_d

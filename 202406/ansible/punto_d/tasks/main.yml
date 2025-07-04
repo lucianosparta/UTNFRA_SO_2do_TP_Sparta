@@ -1,0 +1,29 @@
+---
+- name: Crear estructura de directorios
+  file:
+    path: "{{ item }}"
+    state: directory
+    mode: '0755'
+  loop:
+    - /tmp/2do_parcial
+    - /tmp/2do_parcial/alumno
+    - /tmp/2do_parcial/equipo
+
+- name: Crear archivo datos_alumno.txt desde template
+  template:
+    src: datos_alumno.txt.j2
+    dest: /tmp/2do_parcial/alumno/datos_alumno.txt
+    mode: '0644'
+
+- name: Crear archivo datos_equipo.txt desde template
+  template:
+    src: datos_equipo.txt.j2
+    dest: /tmp/2do_parcial/equipo/datos_equipo.txt
+    mode: '0644'
+
+- name: Agregar configuración sudoers para 2PSupervisores
+  copy:
+    dest: /etc/sudoers.d/2psupervisores
+    content: "%2PSupervisores ALL=(ALL) NOPASSWD:ALL\n"
+    mode: '0440'
+

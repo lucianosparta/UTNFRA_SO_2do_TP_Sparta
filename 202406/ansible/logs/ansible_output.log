@@ -1,0 +1,35 @@
+2024-06-24 18:08:06,499 p=3444395 u=upszot n=ansible | [WARNING]: A duplicate localhost-like entry was found (localhost). First found localhost was 127.0.0.1
+
+2024-06-24 18:08:06,598 p=3444395 u=upszot n=ansible | PLAY [all] **********************************************************************************************************************************************************************************************************************************
+2024-06-24 18:08:06,609 p=3444395 u=upszot n=ansible | TASK [Gathering Facts] **********************************************************************************************************************************************************************************************************************
+2024-06-24 18:08:07,746 p=3444395 u=upszot n=ansible | ok: [localhost]
+2024-06-24 18:08:07,775 p=3444395 u=upszot n=ansible | TASK [include_role : 2do_parcial] ***********************************************************************************************************************************************************************************************************
+2024-06-24 18:08:07,805 p=3444395 u=upszot n=ansible | TASK [2do_parcial : debug] ******************************************************************************************************************************************************************************************************************
+2024-06-24 18:08:07,817 p=3444395 u=upszot n=ansible | ok: [localhost] => {
+    "msg": "Tareas del 2do Parcial"
+}
+2024-06-24 18:08:07,836 p=3444395 u=upszot n=ansible | TASK [Otra tarea] ***************************************************************************************************************************************************************************************************************************
+2024-06-24 18:08:07,851 p=3444395 u=upszot n=ansible | ok: [localhost] => {
+    "msg": "Despues de la ejecucion del rol"
+}
+2024-06-24 18:08:07,885 p=3444395 u=upszot n=ansible | PLAY RECAP **********************************************************************************************************************************************************************************************************************************
+2024-06-24 18:08:07,885 p=3444395 u=upszot n=ansible | localhost                  : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-07-04 11:02:42,853 p=26853 u=sparta n=ansible | - Role punto_d was created successfully
+2025-07-04 11:28:19,282 p=26979 u=sparta n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that
+the implicit localhost does not match 'all'
+
+2025-07-04 11:28:19,849 p=26979 u=sparta n=ansible | PLAY [Aplicar role punto_d] ****************************************************
+2025-07-04 11:28:19,885 p=26979 u=sparta n=ansible | TASK [Gathering Facts] *********************************************************
+2025-07-04 11:28:23,489 p=26979 u=sparta n=ansible | ok: [localhost]
+2025-07-04 11:28:23,518 p=26979 u=sparta n=ansible | TASK [punto_d : Crear estructura de directorios] *******************************
+2025-07-04 11:28:24,555 p=26979 u=sparta n=ansible | changed: [localhost] => (item=/tmp/2do_parcial)
+2025-07-04 11:28:25,125 p=26979 u=sparta n=ansible | changed: [localhost] => (item=/tmp/2do_parcial/alumno)
+2025-07-04 11:28:25,706 p=26979 u=sparta n=ansible | changed: [localhost] => (item=/tmp/2do_parcial/equipo)
+2025-07-04 11:28:25,749 p=26979 u=sparta n=ansible | TASK [punto_d : Crear archivo datos_alumno.txt desde template] *****************
+2025-07-04 11:28:27,537 p=26979 u=sparta n=ansible | changed: [localhost]
+2025-07-04 11:28:27,572 p=26979 u=sparta n=ansible | TASK [punto_d : Crear archivo datos_equipo.txt desde template] *****************
+2025-07-04 11:28:28,706 p=26979 u=sparta n=ansible | changed: [localhost]
+2025-07-04 11:28:28,738 p=26979 u=sparta n=ansible | TASK [punto_d : Agregar configuración sudoers para 2PSupervisores] *************
+2025-07-04 11:28:29,847 p=26979 u=sparta n=ansible | changed: [localhost]
+2025-07-04 11:28:29,881 p=26979 u=sparta n=ansible | PLAY RECAP *********************************************************************
+2025-07-04 11:28:29,882 p=26979 u=sparta n=ansible | localhost                  : ok=5    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
